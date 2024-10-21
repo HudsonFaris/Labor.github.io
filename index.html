@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health Monitor</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    Health Monitoring Dashboard
+</header>
+
+<main>
+    <div class="left-container">
+        <section class="data-section">
+            <h2>Heartbeat Rate</h2>
+            <svg class="circular-progress" viewBox="0 0 150 150">
+                <circle class="progress-bg" cx="75" cy="75" r="70"></circle>
+                <circle class="progress-bar" cx="75" cy="75" r="70" style="--value: 70;"></circle>
+                <text class="progress-label" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" id="heartbeat-value">70 BPM</text>
+            </svg>
+        </section>
+
+        <section class="data-section">
+            <h2>FRI Score</h2>
+            <svg class="circular-progress" viewBox="0 0 150 150">
+                <circle class="progress-bg" cx="75" cy="75" r="70"></circle>
+                <circle class="progress-bar" cx="75" cy="75" r="70" style="--value: 50;"></circle>
+                <text class="progress-label" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" id="fri-value">50</text>
+            </svg>
+            <input type="number" id="fri-input" placeholder="Enter FRI Score" min="0" max="100">
+            <button id="update-fri-btn">Update FRI</button>
+        </section>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="right-container">
+        <canvas id="fri-chart"></canvas>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Hudson Faris. All rights reserved.</p>
+</footer>
+
+<!-- Link to external JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1d1f21; /* Dark background */
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #2c2f33;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex: 1;
+    gap: 20px; /* Add space between the left and right containers */
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between sections */
+    width: 40%;
+}
+
+.right-container {
+    width: 60%;
+    background-color: #2c2f33;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.data-section {
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+.circular-progress {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.circular-progress .progress-bar {
+    stroke-width: 8;
+    stroke: #4CAF50;
+    fill: transparent;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: progress-animation 2s ease forwards;
+}
+
+.circular-progress .progress-bg {
+    stroke-width: 8;
+    stroke: #555;
+    fill: transparent;
+}
+
+.circular-progress .progress-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #ddd;
+}
+
+@keyframes progress-animation {
+    from {
+        stroke-dashoffset: 472;
+    }
+    to {
+        stroke-dashoffset: calc(472 - (472 * var(--value) / 100));
+    }
+}
+
+/* Styling for the chart */
+.chart-container {
+    height: 400px;
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}

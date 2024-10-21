@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9e9b9b;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set to full height to make sure elements can align properly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Important for positioning the image within the body */
+    animation: gradientAnimation 10s ease infinite;
+    background: linear-gradient(45deg, #1d0a0b, #3a3a3a, #5e4e49, #301f2b);
+}
+
+.login-container {
+    width: 300px;
+    background-color: #333; /* Same color as the footer */
+    padding: 20px;
+    display: block;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    bottom: 50%;
+    border: 5px solid #45a049; /* glow?? */
+    text-align: center;
+    z-index: 1; /* Ensures the login form is above the image */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h2 {
+    text-align: center;
+    color: #fff; /* Light text color to contrast with the dark background */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #fff; /* Light color for labels to contrast with dark background */
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #a5a2a2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    display: none;
+}
+
+footer {
+    background-color: #333; /* Footer color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/*
+img {
+    width: 150px;
+    height: 150px; 
+    display: block;
+    position: absolute;
+    bottom: 20%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%; 
+    border: 5px solid #45a049;
+    opacity: 1.0; 
+} */
+
+
