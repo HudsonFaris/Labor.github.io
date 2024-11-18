@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Health Monitor</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    Health Monitoring Dashboard
-</header>
+    <!-- Header -->
+    <header>
+        <img src="images/Health.png" alt="Health Monitoring">
+        <p id="title">Dashboard</p>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Settings</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+                <a href="#">Option 4</a>
+            </div>
+        </div>
+    </header>
 
-<main>
-    <div class="left-container">
-        <section class="data-section">
-            <h2>Heartbeat Rate</h2>
-            <svg class="circular-progress" viewBox="0 0 150 150">
-                <circle class="progress-bg" cx="75" cy="75" r="70"></circle>
-                <circle class="progress-bar" cx="75" cy="75" r="70" style="--value: 70;"></circle>
-                <text class="progress-label" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" id="heartbeat-value">70 BPM</text>
-            </svg>
-        </section>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="left-content">
+                <div class="progress-item">
+                    <p>FRI Score</p>
+                    <div id="friProgress"></div>
+                </div>
+                <div class="progress-item">
+                    <p>Beats/min</p>
+                    <div id="heartbeat"></div>
+                </div>
+            </div>
+            <div class="right-content">
+                <canvas id="friChart"></canvas>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="info-content">
+                <h2>Client Info</h2>
+                <div class="patient-info">
+                    <p><strong>Name:</strong> Samantha Dior</p>
+                    <p><strong>Age:</strong> 28</p>
+                    <p><strong>Status:</strong> Healthy</p>
+                    <p><strong>Pregnancy Progress:</strong> 6 Months</p>
+                    <hr>
+                    <p><strong>Race:</strong> White</p>
+                    <p><strong>Previous Health Issues:</strong> N/A</p>
+                    <p><strong>First Child:</strong> No</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        <section class="data-section">
-            <h2>FRI Score</h2>
-            <svg class="circular-progress" viewBox="0 0 150 150">
-                <circle class="progress-bg" cx="75" cy="75" r="70"></circle>
-                <circle class="progress-bar" cx="75" cy="75" r="70" style="--value: 50;"></circle>
-                <text class="progress-label" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" id="fri-value">50</text>
-            </svg>
-            <input type="number" id="fri-input" placeholder="Enter FRI Score" min="0" max="100">
-            <button id="update-fri-btn">Update FRI</button>
-        </section>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hudson Faris. All rights reserved.</p>
+    </footer>
 
-    <!-- Chart Section -->
-    <div class="right-container">
-        <canvas id="fri-chart"></canvas>
-    </div>
-</main>
-
-<footer>
-    <p>&copy; 2024 Hudson Faris. All rights reserved.</p>
-</footer>
-
-<!-- Link to external JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
+    <!-- External JavaScript -->
+    <!-- ProgressBar.js -->
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
