@@ -9,7 +9,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // Simple authentication check (username and password are both "1234")
     if (username === 'Safeties' && password === '111') {
         // Redirect to the health monitoring dashboard (replace with the actual page)
-        window.location.href = 'index.html';
+        window.location.href = 'Main Page\main.html';
     } else {
         // Show error message
         errorMessage.textContent = 'Incorrect username or password.';
