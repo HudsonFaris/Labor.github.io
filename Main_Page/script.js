@@ -14,7 +14,7 @@ document.addEventListener('click', function () {
 });
 
 // Define maximum heart rate for scaling
-const MAX_HEART_RATE = 200; // Adjust according to realistic maximum heart rate
+const MAX_HEART_RATE = 200; //realistic maximum heart rate (could be raised)
 
 // Initialize Progress Bars
 const friProgressBar = new ProgressBar.Circle('#friProgress', {
@@ -127,9 +127,13 @@ const friChart = new Chart(ctx, {
   }
 });
 
+
+
+//not exactly sure how to do this
+
 // Function to fetch the latest metrics
 function fetchMetrics() {
-  fetch('/api/metrics')
+  fetch('/api/metrics') //dont know what to do here... 
     .then(response => response.json())
     .then(data => {
       if (data.error) {
@@ -142,12 +146,14 @@ function fetchMetrics() {
       console.error('Fetch error:', error);
     });
 }
+//main part
 
 // Function to update progress bars and chart with new data
 function updateMetrics(data) {
-  const { heartbeat, fri_score, timestamp } = data;
+  const { heartbeat, fri_score, timestamp } = data; //dont know what data exactly looks like??
 
   // Update progress bars
+  //fri_score = calcScore(fri_score)
   friProgressBar.animate(fri_score / 100); // Assuming FRI score is out of 100
   heartbeatBar.animate(heartbeat / MAX_HEART_RATE);
 
@@ -170,3 +176,61 @@ setInterval(fetchMetrics, 5000);
 
 // Initial fetch
 fetchMetrics();
+
+
+
+
+
+
+
+
+
+
+// Language Dropdown Functionality
+const languageLinks = document.querySelectorAll('.language-dropdown .dropdown-content a');
+
+languageLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const selectedLang = this.getAttribute('data-lang');
+        changeLanguage(selectedLang);
+    });
+});
+
+// Function to change language
+function changeLanguage(lang) {
+    // Implement language change logic here
+    console.log('Language changed to:', lang);
+    // You can call a function to load translations here
+}
+
+
+function calcScore(FHR, Baseline_FHR, FHR_Ave_Variability, Seconds, Uterine_Activity) {
+  let score = 0;
+  // Fetal Heart Rate between 110 and 160
+  if (FHR >= 110 && FHR <= 160) {
+      score += 1;
+  }
+
+  // Baseline FHR Variability between 5 and 25
+  if (Baseline_FHR >= 5 && Baseline_FHR <= 25) {
+      score += 1;
+  }
+
+  // FHR Baseline + Ave Variability Accelerations between 14 and 30
+  if (FHR_Ave_Variability >= 14 && FHR_Ave_Variability <= 30) {
+      score += 1;
+  }
+
+  // Seconds until return to Normal Deceleration between 1 and 135
+  if (Seconds >= 1 && Seconds <= 135) {
+      score += 1;
+  }
+
+  // Increased Uterine Activity Score between 1 and 4
+  if (Uterine_Activity >= 1 && Uterine_Activity <= 4) {
+      score += 1;
+  }
+
+  return score;
+}

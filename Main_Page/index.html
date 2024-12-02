@@ -4,7 +4,7 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Monitor</title>
+    <title data-i18n="title">Health Monitor</title>
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
@@ -15,7 +15,32 @@
     <!-- Header -->
     <header>
         <img src="images/Health.png" alt="Health Monitoring">
-        <p id="title">Dashboard</p>
+        <p id="title" data-i18n="dashboard">Dashboard</p>
+        <!-- Original Options Dropdown -->
+        <!-- Language Dropdown -->
+        <div class="dropdown language-dropdown">
+            <button class="dropdown-btn">
+                <span class="language-icon">🌐</span>
+            </button>
+            <div class="dropdown-content">
+                <p><strong data-i18n="centralAfrica">Central Africa</strong></p>
+                <a href="#" data-lang="sw">Swahili</a>
+                <a href="#" data-lang="ln">Lingala</a>
+                <a href="#" data-lang="rw">Kinyarwanda</a>
+                <a href="#" data-lang="rn">Kirundi</a>
+                <a href="#" data-lang="ny">Chichewa</a>
+                <p><strong data-i18n="southeastAsia">Southeast Asia</strong></p>
+                <a href="#" data-lang="id">Indonesian</a>
+                <a href="#" data-lang="ms">Malay</a>
+                <a href="#" data-lang="th">Thai</a>
+                <a href="#" data-lang="vi">Vietnamese</a>
+                <a href="#" data-lang="km">Khmer</a>
+                <a href="#" data-lang="my">Burmese</a>
+                <a href="#" data-lang="tl">Tagalog</a>
+                <a href="#" data-lang="lo">Lao</a>
+            </div>
+        </div>
+
         <div class="dropdown">
             <button class="dropdown-btn">
                 <div class="line"></div>
@@ -23,10 +48,10 @@
                 <div class="line"></div>
             </button>
             <div class="dropdown-content">
-                <a href="#">Settings</a>
-                <a href="#">Option 2</a>
-                <a href="#">Option 3</a>
-                <a href="#">Option 4</a>
+                <a href="#" data-i18n="settings">Settings</a>
+                <a href="#" data-i18n="option2">Option 2</a>
+                <a href="#" data-i18n="option3">Option 3</a>
+                <a href="#" data-i18n="option4">Option 4</a>
             </div>
         </div>
     </header>
@@ -36,11 +61,11 @@
         <div class="container">
             <div class="left-content">
                 <div class="progress-item">
-                    <p>FRI Score</p>
+                    <p data-i18n="friScore">FRI Score</p>
                     <div id="friProgress"></div>
                 </div>
                 <div class="progress-item">
-                    <p>Beats/min</p>
+                    <p data-i18n="beatsPerMin">Beats/min</p>
                     <div id="heartbeat"></div>
                 </div>
             </div>
@@ -50,16 +75,16 @@
         </div>
         <div class="info-container">
             <div class="info-content">
-                <h2>Client Info</h2>
+                <h2 data-i18n="clientInfo">Client Info</h2>
                 <div class="patient-info">
-                    <p><strong>Name:</strong> Samantha Dior</p>
-                    <p><strong>Age:</strong> 28</p>
-                    <p><strong>Status:</strong> Healthy</p>
-                    <p><strong>Pregnancy Progress:</strong> 6 Months</p>
+                    <p><strong data-i18n="name">Name:</strong> Samantha Dior</p>
+                    <p><strong data-i18n="age">Age:</strong> 28</p>
+                    <p><strong data-i18n="status">Status:</strong> Healthy</p>
+                    <p><strong data-i18n="pregnancyProgress">Pregnancy Progress:</strong> 6 Months</p>
                     <hr>
-                    <p><strong>Race:</strong> White</p>
-                    <p><strong>Previous Health Issues:</strong> N/A</p>
-                    <p><strong>First Child:</strong> No</p>
+                    <p><strong data-i18n="race">Race:</strong> White</p>
+                    <p><strong data-i18n="previousHealthIssues">Previous Health Issues:</strong> N/A</p>
+                    <p><strong data-i18n="firstChild">First Child:</strong> No</p>
                 </div>
             </div>
         </div>
@@ -75,6 +100,10 @@
     <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- i18next Library -->
+    <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
+    <!-- i18nextXHRBackend for loading translations -->
+    <script src="https://unpkg.com/i18next-http-backend@1.4.2/i18nextHttpBackend.min.js"></script>
     <!-- Custom Scripts -->
     <script src="script.js"></script>
 </body>
